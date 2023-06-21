@@ -26,8 +26,8 @@ div[class*="row-"]>span {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 35px;
-  width: 35px;
+  height: 45px;
+  width: 45px;
   outline: none;
   font-size: larger;
   text-transform: uppercase;
@@ -83,8 +83,8 @@ div[class*="row-"]>span:disabled {
 .key {
   display: flex;
   background-color: rgb(255, 255, 255);
-  min-width: 50px;
-  height: 30px;
+  min-width: 40px;
+  height: 40px;
   border: solid .7px;
   align-items: center;
   justify-content: center;
