@@ -89,7 +89,7 @@ div[class*="row-"]>span:disabled {
   align-items: center;
   justify-content: center;
   cursor: pointer;
-
+  padding: 10px;
 }
 
 /* .key:hover{
