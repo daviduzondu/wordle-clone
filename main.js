@@ -82,7 +82,7 @@ function main() {
 
     showBtn.addEventListener('click', () => {
         if (currentRow > 4) {
-            // alert(`Alright fine! the answer is ${secretWord}`)
+            
             Toastify({
                 text: `Alright fine! the answer is ${secretWord}`,
                 duration: 2500,
@@ -91,8 +91,8 @@ function main() {
         }
         else {
             Toastify({
-                text: `${4 - currentRow} tries before you can view the answer.`,
-                duration: 2500, // `top` or `bottom`
+                text: `${5 - currentRow} tries before you can view the answer.`,
+                duration: 2500,
                 className: "alert",
                 position: "center",
             }).showToast();
