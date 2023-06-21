@@ -7,7 +7,7 @@ let keys = "QWERTYUIOPASDFGHJKLZXCVBNM".split("");
 let restartBtn = document.querySelector("#restart-btn");
 let showBtn = document.querySelector("#show-btn");
 keys.push("Backspace");
-let keyrows = document.querySelectorAll(".keyrow");
+let keyrow = document.querySelector(".keyrow");
 let boardContent = [
     [0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0],
@@ -30,35 +30,26 @@ for (let i = 0; i <= 5; i++) {
     board.appendChild(row);
 }
 
-keyrows.forEach((keyrow, rowIndex) => {
-    if (rowIndex === 0) {
-        generateKeys(0, 10);
-    } else if (rowIndex === 1) {
-        generateKeys(10, 19)
-    } else if (rowIndex === 2) {
-        generateKeys(19, 27)
-    }
 
-    function generateKeys(start, stop) {
-        keys.slice(start, stop).forEach(entry => {
-            let key = document.createElement("button");
-            if (entry === "*") {
-                key.innerText = "Backspace";
-            } else {
-                key.innerText = entry;
-            }
-            key.className = "key"
-            key.setAttribute("data-key", entry.toUpperCase());
-            key.addEventListener("click", () => {
-                insertKey(entry.toUpperCase())
-                setTimeout(() => {
-                    document.querySelector(`button[data-key=${entry.toUpperCase()}]`).blur();
-                }, 250)
-            })
-            keyrows[rowIndex].append(key);
-        })
+keys.forEach(entry => {
+    let key = document.createElement("button");
+    if (entry === "*") {
+        key.innerText = "Backspace";
+    } else {
+        key.innerText = entry;
     }
+    key.className = "key"
+    key.setAttribute("data-key", entry.toUpperCase());
+    key.addEventListener("click", () => {
+        insertKey(entry.toUpperCase())
+        setTimeout(() => {
+            document.querySelector(`button[data-key=${entry.toUpperCase()}]`).blur();
+        }, 250)
+    })
+    keyrow.append(key);
 })
+
+
 let rows = [...document.querySelectorAll('div')].filter(x => x.className.includes("row-"));
 let boxes = [];
 rows.forEach(row => [...row.children].forEach(child => boxes.push(child)))
@@ -103,7 +94,7 @@ function main() {
                 text: `${4 - currentRow} tries before you can view the answer.`,
                 duration: 2500, // `top` or `bottom`
                 className: "alert",
-                position:"center",
+                position: "center",
             }).showToast();
         }
     })
