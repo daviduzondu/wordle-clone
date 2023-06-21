@@ -26,8 +26,8 @@ div[class*="row-"]>span {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 65px;
-  width: 65px;
+  height: 35px;
+  width: 35px;
   outline: none;
   font-size: larger;
   text-transform: uppercase;
