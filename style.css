@@ -66,12 +66,14 @@ div[class*="row-"]>span:disabled {
 }
 
 .keyrow {
+  position: absolute;
   display: flex;
   width:90vw;
   align-items: center;
   justify-content: center;
   gap:10px;
   flex-wrap: wrap;
+  bottom:20px;
 }
 
 .keyrow > button{
